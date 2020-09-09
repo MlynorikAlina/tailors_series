@@ -3,11 +3,7 @@ package com.bsu;
 import static org.junit.Assert.*;
 
 public class TailorSeriesCalculatorTest {
-    private static String formattedValue(double value) {
-        return String.format("%.3f", value);
-    }
-
-    @org.junit.Test
+      @org.junit.Test
     public void testCalculateTailorSeries() {
         double lowerBoundOfTheRange = -10;
         double higherBoundOfTheRange = 10;
