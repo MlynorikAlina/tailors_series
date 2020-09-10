@@ -7,6 +7,9 @@ public class TailorSeriesCalculator {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Enter k: ");
             int k = scanner.nextInt();
+            if (k <= 0) {
+                throw new InvalidParameterException("k is not natural");
+            }
             System.out.println("Enter x: ");
             double x = scanner.nextDouble();
             double accuracy = Math.pow(10, -k);
@@ -15,6 +18,8 @@ public class TailorSeriesCalculator {
 
             System.out.println("Actual value: " + formattedValue(actualValue));
             System.out.println("Calculated value: " + formattedValue(calculatedValue));
+        } catch (InvalidParameterException ex) {
+            System.out.println("Error while reading value: " + ex);
         } catch (Exception ex) {
             System.out.println("Error while calculating: " + ex);
         }
